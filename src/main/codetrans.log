@@ -1,0 +1,27 @@
+Generated c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\chat\server.js
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\index.html to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\chat
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\vertxbus.js to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\chat
+Generated c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\chat\server.groovy
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\index.html to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\chat
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\vertxbus.js to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\chat
+Generated c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\chat\server.rb
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\index.html to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\chat
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\chat\webroot\vertxbus.js to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\chat
+Generated c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth\deploy_example.js
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\private\private_page.html to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\index.html to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\loginpage.html to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\page1.html to c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth
+Generated c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth\deploy_example.groovy
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\private\private_page.html to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\index.html to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\loginpage.html to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\page1.html to c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth
+Generated c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth\deploy_example.rb
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\private\private_page.html to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\index.html to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\loginpage.html to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth
+Copying resource c:\views\Apps\web-examples\src\main\java\io\vertx\example\web\auth\webroot\page1.html to c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth
+Generated c:\views\Apps\web-examples\src\main\js\io\vertx\example\web\auth\server.js
+Generated c:\views\Apps\web-examples\src\main\groovy\io\vertx\example\web\auth\server.groovy
+Generated c:\views\Apps\web-examples\src\main\rb\io\vertx\example\web\auth\server.rb
