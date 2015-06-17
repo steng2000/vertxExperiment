@@ -12,10 +12,10 @@ I would setup cluster.xml to use one of the machine as the cluster-host (site A)
 	
 
 
-Site A (The designated cluster host): 
+###Site A (The designated cluster host): 
   Run core-example's pubsub Sender in cluster mode sending message every 10 seconds. 
   
-Site B 
+###Site B 
   Modify web chat to consume and publish messages to a web page. 
   I am consuming from both the web chart topic as well as the Sender from SiteA. 
   The message is then published to the web page so that I see both the timer news msg as well as anyone typing on the web chat browser. 
