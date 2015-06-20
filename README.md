@@ -3,16 +3,43 @@ Selective examples from vertx web-examples.
 
 ## Description
 When I started learning about vertx.web-examples, I was puzzled by why my vertx web-example program can't find the webroot resources. 
-This is true for both trying to run the program in command line as well as using IDE. 
-Purusing throught the log files and debugging in IDE, I see this line that showed web-example\web-example.... which lead me to 
-experiement copying web-example to where I was executing the command.  
+This is the case for running program in command line and IDE
+<ul>
+<li>vertx run </li>
+<li>java -jar fat.jar</li>
+<li>IDE (eclipse) </li>
+</ul>
 
-I found there are specific references in io.vertx.example.util.Runner,  prompted my experimentation below. 
+Purusing throught the log files and debugging in IDE, I see an entry showing web-example\web-example.... 
+which lead me to make a copy of web-example/src/* to where I was executing the command.  
+I also found specific references in io.vertx.example.util.Runner which reference web-example as WEB_EXAMPLE_DIR. 
+This is where eclipse uses to run main.  Eventually a reference for Apex in vertx2 yieleded the classpath clue.
 
-
+<b>vertx run</b>
+```
+Vertx default resource path to webroot which usually means you need 
+  webroot and its artifacts in the filesystem.   
+  Moving the webroot to where I do "vertx run" was able to obtain the resources.
+```
+<b> java -jar </b>
+```
+  The jar file could contain the resource that matches classpath, 
+  If we have have webroot resources included in the jar then it 
+  should be able to find them. web-example do not include them.  
+  Modify pom to add the additional resources should make it possilbe 
+  for verticle to obtain the resources.  Modfication below detail what was done.  
+```
+<b> IDE (eclipse)</b>
+```
+The main program could run out of the box with slight change to the runner program. 
+```
 ## Modification
-webroot paths is determined by io.vertx.example.util.Runner.  
-Changing to "webpath" as oppose to web-example
+IDE's webroot paths is determined by io.vertx.example.util.Runner.  
+copy web-example/src to web-example making a structure like web-example/web-example/src/main.../webroot
+will work.  I changed the web-example-dir to '.' which resolve the path and with the chagne we no longer need to make the copy. 
+
+Java -jar would need pom.xml chagne to include resource (will add desription at a later update to ths README)
+
 
 This does not appear to be description on how to get web-example running.  Maybe this is a well known practice I just missed?
 To get the example program to run as described, create a directory "webpath" and copy src into it. 
