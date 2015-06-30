@@ -19,15 +19,15 @@ This is where eclipse uses to run main.  Eventually a reference for Apex in vert
 ```
 Vertx default resource path to webroot which usually means you need 
   webroot and its artifacts in the filesystem.   
-  Moving the webroot to where I do "vertx run" was able to obtain the resources.
+  Moving the webroot to where I do "vertx run" resolved teh missing webroot resources.
 ```
 <b> java -jar </b>
 ```
   The jar file could contain the resource that matches classpath, 
-  If we have have webroot resources included in the jar then it 
-  should be able to find them. web-example do not include them.  
-  Modify pom to add the additional resources should make it possilbe 
-  for verticle to obtain the resources.  Modfication below detail what was done.  
+  If we have webroot resources included in the jar then it 
+  should be able to find them. web-example do not include them in their pom.  
+  Modify pom adding the additional resources make it possilbe for verticles
+  to obtain the webroot resources.  Modfication below detail what was done.  
 ```
 <b> IDE (eclipse)</b>
 ```
@@ -36,34 +36,52 @@ The main program could run out of the box with slight change to the runner progr
 ## Modification
 IDE's webroot paths is determined by io.vertx.example.util.Runner.  
 copy web-example/src to web-example making a structure like web-example/web-example/src/main.../webroot
-will work.  I changed the web-example-dir to '.' which resolve the path and with the chagne we no longer need to make the copy. 
+will work.  I changed the web-example-dir to '.' which resolve the path and remove the copy step above. 
 
-Java -jar would need pom.xml chagne to include resource (will add desription at a later update to ths README)
+Java -jar would need pom.xml modification to enable fat jar and inclusion of webroot.
+The current pom uses angularjs as an example, I copy angularjs's webroot to where pom.xml is located, add 
+<resources> specification in our pom's build block.  
+```
+"." to pickup webroot and 
+main/resources to include propreties files needed to run the program at root path.
+```
 
-
-This does not appear to be description on how to get web-example running.  Maybe this is a well known practice I just missed?
-To get the example program to run as described, create a directory "webpath" and copy src into it. 
+There does not appear to be description on how to get web-example running.  Maybe this is a well known practice I just missed?
+In any event, with the modification described above, I am now able to run web-example programs on command line, eclipse, as well 
+as a fat-jar.
 
 ## Build issues
-The 3.0.0-SNAPSHOT is not deployed in an accessible public repo. 
-I was able to get the program to build by git clone vertx-stack and vertx-web perform mvn install to build up the 3.0.0-SNAPSHOT 
-artifacts.   TL;DR into pom to figure out how to do it otherwise. 
+This is no longer an issue with the release of 3.0.0 on June 24, 2015.
+The 3.0.0-SNAPSHOT was not deployed in a public repo.
+I was able to get the example program to build by git clone vertx-stack and vertx-web and perform mvn install.
+That build up the 3.0.0-SNAPSHOT artifacts to allow a milestone 6 build.  
+Once those packages were build, I did <b>mvn package </b> and the web-example finally build successfully.
 
-Once those packages were build, I did 
-<b>mvn package </b> it should build successfully.
+One other note: My company's antivirus program takes up port 8081 which cause unit-example test to fail.  
+I changed 8081 to a different port to workaround it. 
 
 
 ## Run 
-I am only interested in Java and RxJava here.  
+I am only interested in Java and RxJava here. 
+
+`Need to check if 3.0.0 fix the js issue below`
+
 When attempting js; it complains about a missing component but it runs fine with core-examples.
 
-vertx program can usually run from command. However, web-example do not run well with milestone5.  
+vertx program can usually run from command. However, web-example do not run well with milestone5/6.  
+
 ```
+For Java:
 cd vertxExample 
 vertx run io.vertx.example.auth.Server -cp target/web-example-3.0.0-SNAPSHOT.jar
 ```
 
 I use IDE to run the program; main is provided to start the program. 
 
-Additionally fat-jar is build and can run with ```java -jar foo-fat.jar```
-The pom file buidls fat-jar for chat; To get a fat-jar for other program; just change the main specificaiton in the pom file. 
+Additionally fat-jar is now part of the build and can run with ```java -jar foo-fat.jar```
+```
+The pom file buidls fat-jar for angularjs; 
+To get a fat-jar for other program; 
+change the main specificaiton in the pom file. 
+copy that example's webroot to the directory where pom.xml resides
+```

@@ -5,7 +5,7 @@ package io.vertx.example.util;
  */
 public class Runner {
 
-  private static final String WEB_EXAMPLES_DIR = "webpath";
+  private static final String WEB_EXAMPLES_DIR = "."; // allow eclipse to locate webroot resources
   private static final String WEB_EXAMPLES_JAVA_DIR = WEB_EXAMPLES_DIR + "/src/main/java/";
   private static final String WEB_EXAMPLES_JS_DIR = WEB_EXAMPLES_DIR + "/src/main/js/";
   private static final String WEB_EXAMPLES_GROOVY_DIR = WEB_EXAMPLES_DIR + "/src/main/groovy/";
