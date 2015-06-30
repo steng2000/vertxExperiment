@@ -1,0 +1,31 @@
+<H1>VPLEX &lt;AngularJS&gt;</H1>
+<br>
+<br>
+<table border='0' cellpadding="5" cellpadding="5">
+  <tr><td colspan='2'><a ng-click="setContextPath('root')"><b>VPlexcli:/></b></a>
+     <a ng-click='setContextPath(breadcrumb)' ng-repeat="breadcrumb in breadcrumbs"> / {{breadcrumb}}</a>
+  </br></br></td></tr>
+  <tr colspan='2' ng-show="isLoading"> 
+     <th colspan='8' valign="top"><h2>Loading...</h2></th>
+  </tr>
+  <tr ng-show="!isLoading" valign="top">
+    <td valign="top" width="200">
+	  <h4>Sub Contexts:</h4>
+	  <div ng-show="isFilterableObject"> Filter: <input ng-model="filterExp"> </div>
+      <table border='0'>
+        <tr ng-repeat="subContext in subContexts | filter:filterExp" >
+          <td valign="top"><a ng-click='appendContextPath(subContext.name)'>{{subContext.name}}</a><br/></td>
+        </tr>
+   	  </table>
+	</td>
+	<td valign="top">
+	  <h4>Attributes:</h4>
+      <table border='0'>
+        <tr ng-repeat="attribute in attributes" >
+          <td valign="top" width="160"><b>{{attribute.name}}</b></td>
+		  <td valign="top">{{attribute.value}}</td>
+        </tr>
+   	  </table>
+    </td>
+  </tr>	
+</table>
